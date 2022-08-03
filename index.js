@@ -6,10 +6,11 @@ let seconds1 = document.querySelector(".seconds-1");
 let seconds2 = document.querySelector(".seconds-2");
 let title = document.querySelector("title");
 let   counterMin1 = 2;
-let   counterMin2 = 5;
+let   counterMin2 = 4;
 let   counterSec1 = 5;
 let   counterSec2 = 9;
 let clickSound = new Audio("sounds/click.wav");
+let pauseSound = new Audio ("sounds/pause.wav")
 let clicked = 0;
 
 
@@ -20,7 +21,7 @@ btnPlay.addEventListener("click",()=>{
     // Esta parte del condicional se ejecuta si el codigo está en play
     if (clicked % 2 !== 0){
         progressBar()
-        counterMin2--;
+        
         clickSound.play();
         let image = document.querySelector(".image").src="images/pause.png"
         
@@ -56,7 +57,7 @@ btnPlay.addEventListener("click",()=>{
                 counterMin1--
                 counterMin2 = 9;
                 if(counterMin1 < 0){
-                    alert("Time is up")
+                    timeUp()
                 }
             }
         },60000)
@@ -65,6 +66,10 @@ btnPlay.addEventListener("click",()=>{
     } else {
      // esta parte del condicional se ejecuta si el boton está en pause
      let image = document.querySelector(".image").src="images/play.png"
+     pauseSound.play()
+     
+
+
         
        
     }
@@ -92,6 +97,12 @@ let stringSec2 = counterSec2.toString();
     
 title.innerHTML = `${stringMin1}${stringMin2}:${stringSec1}${stringSec2}`
 }
+
+
+function timeUp(){
+
+}
+
 
 
 
