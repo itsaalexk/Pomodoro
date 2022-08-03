@@ -9,51 +9,66 @@ let   counterMin1 = 2;
 let   counterMin2 = 5;
 let   counterSec1 = 5;
 let   counterSec2 = 9;
-let click = new Audio("sounds/click.wav")
+let clickSound = new Audio("sounds/click.wav");
+let clicked = 0;
+
 
 // FUNCION QUE SE EJECUTA AL PULSAR EL BOTON
 
 btnPlay.addEventListener("click",()=>{
-    progressBar()
-    counterMin2--;
-    click.play();
-    
-    
-    setInterval(()=>{
-        
-        minute1.innerHTML = counterMin1;
-        minute2.innerHTML = counterMin2;
-        seconds1.innerHTML = counterSec1;
-        seconds2.innerHTML = counterSec2;
-        counterSec2--
-        
-        if(counterSec2 < 0){
-            counterSec2 = 9;
-        }
-        
-        titleCounter()
-    },1000)
-
-    setInterval(()=>{
-        counterSec1--
-        
-        if(counterSec1 < 0){
-            counterSec1 = 5
-        }
-
-    },10000)
-
-    setInterval(()=>{
+    clicked++
+    // Esta parte del condicional se ejecuta si el codigo está en play
+    if (clicked % 2 !== 0){
+        progressBar()
         counterMin2--;
+        clickSound.play();
+        let image = document.querySelector(".image").src="images/pause.png"
         
-        if(counterMin2 <0){
-            counterMin1--
-            counterMin2 = 9;
-            if(counterMin1 < 0){
-                alert("Time is up")
+        
+        setInterval(()=>{
+            
+            minute1.innerHTML = counterMin1;
+            minute2.innerHTML = counterMin2;
+            seconds1.innerHTML = counterSec1;
+            seconds2.innerHTML = counterSec2;
+            counterSec2--
+            
+            if(counterSec2 < 0){
+                counterSec2 = 9;
             }
-        }
-    },60000)
+            
+            titleCounter()
+        },1000)
+    
+        setInterval(()=>{
+            counterSec1--
+            
+            if(counterSec1 < 0){
+                counterSec1 = 5
+            }
+    
+        },10000)
+    
+        setInterval(()=>{
+            counterMin2--;
+            
+            if(counterMin2 <0){
+                counterMin1--
+                counterMin2 = 9;
+                if(counterMin1 < 0){
+                    alert("Time is up")
+                }
+            }
+        },60000)
+    
+       
+    } else {
+     // esta parte del condicional se ejecuta si el boton está en pause
+     let image = document.querySelector(".image").src="images/play.png"
+        
+       
+    }
+
 
 })
 
@@ -61,7 +76,6 @@ btnPlay.addEventListener("click",()=>{
 function progressBar(){
 let progressBar =document.querySelector(".bar");
 let progressCounter = 0;
-//progressBar.setAttribute("max",)
 
     setInterval(()=>{
         progressCounter++;
