@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+body{
+    background-color:#01579b;
+}
+
+.image-logo{
+    display:flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.logo{
+    width: 70px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.counter{
+    background-color:#0277bd;
+    width: 550px;
+    height: 55px;
+    margin-top: 100px;
+    border-radius: 10px;
+    border-bottom-right-radius:0px ;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    justify-content:center;
+}
+.menu{
+    margin-left: 50px;
+    margin-top: 20px;
+    color:white;
+    font-size:15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu:hover{
+    border-bottom: #e0e0e0 solid 1px;
+    height: 25px;
+}
+.container-2{
+    display: flex;
+    justify-content: center;
+    
+}
+.clock{
+    background-color:#0277bd;
+    width: 550px;
+    height: 250px;
+    color:white;
+    display: flex;
+    justify-content: center;
+}
+/*LA CLASE .CONT LO ÚNICO QUE HACE ES APLICAR UN MARGEN TOP GENERAL AL CONTADOR Y NO AL DIV*/
+.cont{
+    margin-top: 50px;
+    font-size: 100px;
+}
+.container-3{
+    display: flex;
+    justify-content: center;
+    
+}
+.mode{
+    width: 70px;
+    height: 60px;
+}
+.image{
+    width: 40px;
+}
+.btn-div{
+    background-color:#0277bd;
+    width: 550px;
+    height: 100px;
+    border-bottom-right-radius:10px ;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+.btn{
+    color: #ffffff;
+    background-color:#bdbdbd;
+    text-align: center;
+    font-size: 19px;
+    border: 1px solid;
+    border-radius: 8px;
+    height: 45px;
+    width: 250px;
+    cursor: pointer;
+
+}
+.container-4{
+    display: flex;
+    justify-content: center;
+}
+.bar{
+    width:550px;
+    height: 5px;
+}
