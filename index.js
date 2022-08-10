@@ -57,7 +57,7 @@ btnPlay.addEventListener("click",()=>{
                 counterMin1--
                 counterMin2 = 9;
                 if(counterMin1 < 0){
-                    timeUp()
+                    
                 }
             }
         },60000)
@@ -99,9 +99,6 @@ title.innerHTML = `${stringMin1}${stringMin2}:${stringSec1}${stringSec2}`
 }
 
 
-function timeUp(){
-
-}
 
 
 
