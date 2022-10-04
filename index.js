@@ -26,7 +26,7 @@ btnPlay.addEventListener("click",()=>{
         let image = document.querySelector(".image").src="images/pause.png"
         
         
-        setInterval(()=>{
+       sec2 =  setInterval(()=>{
             
             minute1.innerHTML = counterMin1;
             minute2.innerHTML = counterMin2;
@@ -37,20 +37,26 @@ btnPlay.addEventListener("click",()=>{
             if(counterSec2 < 0){
                 counterSec2 = 9;
             }
+            if (clicked % 2 === 0){
+                clearInterval(sec2);
+            }
             
             titleCounter()
         },1000)
     
-        setInterval(()=>{
+         sec1 = setInterval(()=>{
             counterSec1--
             
             if(counterSec1 < 0){
                 counterSec1 = 5
             }
+            if (clicked % 2 === 0){
+                clearInterval(sec1);
+            }
     
         },10000)
     
-        setInterval(()=>{
+        min2 = setInterval(()=>{
             counterMin2--;
             
             if(counterMin2 <0){
@@ -59,6 +65,9 @@ btnPlay.addEventListener("click",()=>{
                 if(counterMin1 < 0){
                     
                 }
+            }
+            if (clicked % 2 === 0){
+                clearInterval(min2);
             }
         },60000)
     
